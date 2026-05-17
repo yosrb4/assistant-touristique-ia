@@ -1,0 +1,26 @@
+{
+  "places": [
+    {"nom": "Médina de Tunis", "ville": "Tunis", "type": "patrimoine", "description": "Souks, mosquées et ruelles historiques au cœur de la capitale."},
+    {"nom": "Musée du Bardo", "ville": "Tunis", "type": "musée", "description": "Plus grande collection de mosaïques romaines au monde."},
+    {"nom": "Village Sidi Bou Saïd", "ville": "Tunis", "type": "balnéaire", "description": "Village bleu et blanc avec vue sur la mer et cafés en terrasse."},
+    {"nom": "Carthage", "ville": "Tunis", "type": "archéologie", "description": "Ruines puniques et romaines, amphithéâtre et thermes."},
+    {"nom": "Cathédrale Saint-Louis", "ville": "Tunis", "type": "patrimoine", "description": "Sur la colline de Byrsa, musée sur l'histoire de Carthage."},
+    {"nom": "Médina de Sousse", "ville": "Sousse", "type": "patrimoine", "description": "Ribat, souks et remparts classés UNESCO."},
+    {"nom": "Port El Kantaoui", "ville": "Sousse", "type": "balnéaire", "description": "Marina, plages et activités nautiques."},
+    {"nom": "Amphithéâtre d'El Jem", "ville": "Sfax", "type": "archéologie", "description": "Troisième plus grand amphithéâtre romain, spectacle possible en été."},
+    {"nom": "Kairouan", "ville": "Kairouan", "type": "spirituel", "description": "Grande Mosquée et médina, ville sainte de l'Islam maghrébin."},
+    {"nom": "Dougga", "ville": "Béja", "type": "archéologie", "description": "Site romain exceptionnel sur les hauteurs du Tell."}
+  ],
+  "hotels": [
+    {"nom": "Hôtel Africa Tunis", "ville": "Tunis", "prix": 85},
+    {"nom": "Dar El Médina", "ville": "Tunis", "prix": 55},
+    {"nom": "La Maison Bleue", "ville": "Tunis", "prix": 120},
+    {"nom": "Auberge de la Médina", "ville": "Tunis", "prix": 40},
+    {"nom": "Hôtel Sousse Palace", "ville": "Sousse", "prix": 70},
+    {"nom": "Résidence Port El Kantaoui", "ville": "Sousse", "prix": 95},
+    {"nom": "Dar Sfax", "ville": "Sfax", "prix": 50},
+    {"nom": "Hôtel Kairouan", "ville": "Kairouan", "prix": 45},
+    {"nom": "Gîte Dougga", "ville": "Béja", "prix": 35},
+    {"nom": "Hôtel Carthage Thalasso", "ville": "Tunis", "prix": 150}
+  ]
+}

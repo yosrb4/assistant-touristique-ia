@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assistant Touristique — Tunisie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Page d'accueil -->
+  <section class="landing" id="landing" aria-label="Accueil">
+    <div class="landing__card">
+      <span class="landing__icon" aria-hidden="true">✈️</span>
+      <h1 class="landing__title">Assistant Touristique Intelligent</h1>
+      <p class="landing__subtitle">Planifiez votre voyage facilement avec l'IA</p>
+      <ul class="landing__features">
+        <li>Itinéraires personnalisés</li>
+        <li>Hôtels & lieux en Tunisie</li>
+      </ul>
+      <button type="button" class="landing__btn" id="startBtn">Commencer</button>
+    </div>
+  </section>
+
+  <!-- Interface chat (masquée au départ) -->
+  <div class="app app--hidden" id="app">
+    <header class="header">
+      <div class="header__brand">
+        <span class="header__logo" aria-hidden="true">✈</span>
+        <div>
+          <h1 class="header__title">Assistant Touristique</h1>
+          <p class="header__subtitle">Agent IA + RAG · Tunisie</p>
+        </div>
+      </div>
+      <span class="header__badge">En ligne</span>
+    </header>
+
+    <main class="chat" id="chat" role="log" aria-live="polite" aria-label="Conversation">
+      <div class="message message--bot message--welcome" id="welcome">
+        <div class="message__avatar" aria-hidden="true">🗺</div>
+        <div class="message__bubble">
+          <p>Bonjour ! Je peux planifier votre séjour en Tunisie.</p>
+          <p class="message__hint">Exemple : <em>3 jours à Sousse petit budget</em></p>
+          <p class="message__hint" style="font-size:0.75rem">Agent v2.1</p>
+        </div>
+      </div>
+    </main>
+
+    <div class="loader hidden" id="loader" aria-hidden="true">
+      <div class="loader__dots">
+        <span></span><span></span><span></span>
+      </div>
+      <span class="loader__text">Préparation de votre itinéraire…</span>
+    </div>
+
+    <footer class="composer">
+      <form class="composer__form" id="form" autocomplete="off">
+        <textarea
+          class="composer__input"
+          id="input"
+          rows="1"
+          placeholder="Décrivez votre voyage…"
+          aria-label="Votre message"
+        ></textarea>
+        <button type="submit" class="composer__send" id="sendBtn" aria-label="Envoyer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+      <p class="composer__note">Propulsé par Groq · Données locales RAG</p>
+    </footer>
+  </div>
+
+  <script src="script.js?v=6"></script>
+</body>
+</html>
