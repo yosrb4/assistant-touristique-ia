@@ -1,6 +1,6 @@
 """
-Serveur web — python server.py
-Ouvrir http://127.0.0.1:8080
+Serveur web HTTP — sert l'interface et l'API /api/chat.
+Lancer : python server.py puis http://127.0.0.1:8081
 """
 
 import json
@@ -15,16 +15,30 @@ PORT = 8081
 
 
 class Handler(SimpleHTTPRequestHandler):
+    """Handler HTTP : fichiers statiques + API REST de l'agent."""
+
     def __init__(self, *args, **kwargs):
+        """Initialise le handler avec le répertoire racine du projet."""
         super().__init__(*args, directory=str(ROOT), **kwargs)
 
     def do_GET(self):
+        """
+        Gère les requêtes GET.
+
+        - /api/version → renvoie la version de l'agent
+        - Autres chemins → fichiers statiques (index.html, CSS, JS)
+        """
         if urlparse(self.path).path == "/api/version":
             self._json({"version": VERSION})
             return
         return SimpleHTTPRequestHandler.do_GET(self)
 
     def do_POST(self):
+        """
+        Gère POST /api/chat : envoie un message à l'agent touristique.
+
+        Corps JSON attendu : { message, state?, session_id? }
+        """
         if urlparse(self.path).path != "/api/chat":
             self.send_error(404)
             return
@@ -40,6 +54,12 @@ class Handler(SimpleHTTPRequestHandler):
         self._json(result)
 
     def _json(self, data):
+        """
+        Envoie une réponse HTTP 200 avec corps JSON UTF-8.
+
+        Args:
+            data: Dict sérialisable en JSON.
+        """
         body = json.dumps(data, ensure_ascii=False).encode("utf-8")
         self.send_response(200)
         self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -49,10 +69,12 @@ class Handler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def log_message(self, fmt, *args):
+        """Redirige les logs HTTP vers stdout (une ligne par requête)."""
         print(args[0])
 
 
 def main():
+    """Démarre le serveur HTTP sur 127.0.0.1:8081."""
     print(f"\n=== Assistant Touristique v{VERSION} ===")
     print(f"    http://127.0.0.1:{PORT}")
     print("    Arretez les anciens serveurs (Ctrl+C) avant de tester\n")

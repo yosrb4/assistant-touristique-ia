@@ -392,6 +392,13 @@ body {
 }
 
 /* Formatage contenu bot */
+.message__content h3.section-heading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 12px 0 6px;
+  color: var(--text);
+}
+
 .message__content h3.day-heading {
   font-size: 0.9rem;
   font-weight: 600;

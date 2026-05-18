@@ -1,9 +1,14 @@
-"""Chat terminal."""
+"""
+Chat terminal — interface en ligne de commande pour l'agent touristique.
+
+Lancer : python main.py
+"""
 
 from agent import process
 
 print("Assistant Touristique (tapez quit pour sortir)\n")
 
+# Boucle de dialogue : chaque message est traité par agent.process()
 while True:
     try:
         msg = input("Vous : ").strip()
